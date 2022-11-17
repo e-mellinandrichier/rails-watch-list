@@ -7,12 +7,14 @@
 <ul>
   <% @list.bookmarks.each do |bookmark| %>
   <li> <%= bookmark.comment %> </li>
-  <% end %>
-</ul>
-
-<%= link_to "Delete",
-  bookmark_path,
+  <%= link_to "Delete",
+  bookmark_path(bookmark),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
+  <% end %>
+
+</ul>
+
+
 
 <%= link_to "back", lists_path %>
